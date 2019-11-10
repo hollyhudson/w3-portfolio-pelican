@@ -1,51 +1,45 @@
 {% extends "base.html" %}
+
 {% block content %}
-	{% if articles %}
-		<!-- for article in articles -->
+
+{% if articles %}
+	{% for article in (articles_page.object_list if articles_page else articles) %}
+		<!-- start a new row every 3rd article -->
+		{% if loop.index0 % 3 == 0 %}
+			<!-- open a new row div -->
+			<div class="w3-row-padding">
+		{% endif %}
 		
-		{% for article in (articles_page.object_list if articles_page else articles) %}
-
-			<!-- start a new row every 3rd article -->
-			{% if loop.index0 % 3 == 0 %}
-				<!-- open a new row div -->
-				<div class="w3-row-padding">
+			<!-- article content -->
+			<div class="w3-third w3-container w3-margin-bottom">
+			<article>
+			{% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
+				<div>
+					{% include "includes/article_info.html" %}
+				</div>
 			{% endif %}
-			
-					<!-- article content -->
-					<div class="w3-third w3-container w3-margin-bottom">
-					<article>
-					{% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
-						<div>
-						<!--{% include "includes/article_info.html" %}-->
-						</div>
-					{% endif %}
-					<!-- article content -->
+
+				<div class="w3-card">
+					<!-- include thumbnail photo if available -->
 					{% if article.splash %}
-						<!-- include thumbnail photo if available -->
-						<div class="w3-card">
-								<img class="splash w3-hover-opacity" src="{{ article.splash }}" alt="test" style="width:100%"/>
-								<p><b><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></b></p>
-								<p>{{ article.summary }}</p>
-								<a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">{{ _('more') }} ...</a>
-						</div>
-					</div>
-					{% else %}
-						<!-- if there's no thumbnail just do a text summary -->
-						<p><b><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></b></p>
-						<div class="summary">{{ article.summary }}
-						<a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">{{ _('more') }} ...</a>
-						</div>
-					</div>
+						<img class="splash w3-hover-opacity" src="{{ article.splash }}" alt="test" style="width:100%"/>
 					{% endif %}
-					</article>
+					
+					<!-- include article title, summary, and more button -->
+						<p><b><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></b></p>
+						<p>{{ article.summary }}</p>
+						<a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">{{ _('more') }} ...</a>
+				</div> <!-- close w3-card div -->
+			</article>
+			</div>
 
-			<!-- if we're on the last article in a row, close the row div -->
-			{% if loop.index0 % 3 == 1 or loop.last %}
-				</div> <!-- end of row div-->
-			{% endif %}
+		<!-- if we're on the last article in a row, close the row div -->
+		{% if loop.index0 % 3 == 2 or loop.index == loop.length %}
+			</div> <!-- end of row div-->
+		{% endif %}
 
-		<!-- end iteration through articles -->
-		{% endfor %}
-	{% endif %}
+	<!-- end iteration through articles -->
+	{% endfor %}
+{% endif %}
 
 {% endblock content %}
