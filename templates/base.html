@@ -34,7 +34,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- !PAGE CONTENT! -->
+<!-- Non-sidebar page stuff -->
 <div class="w3-main" style="margin-right:200px">
 
   <!-- Header -->
@@ -45,19 +45,24 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 	<!-- main title area -->
     <div class="w3-container">
-    <h1><b>Holly Hudson</b></h1>
+    	<h1><b>Holly Hudson</b></h1>
 
-	<!-- top nav bar area -->
-    <div class="w3-section w3-bottombar w3-padding-16">
-      <span class="w3-margin-right">Filter:</span> 
-      <button class="w3-button w3-black">ALL</button>
-      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
-    </div>
+		<!-- top nav bar area -->
+		<div class="w3-section w3-bottombar w3-padding-16">
+			<span class="w3-margin-right">Filter:</span> 
+			<!-- replace with category or tag jinja code -->
+      			<button class="w3-button w3-black">ALL</button>
+      			<button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
+      			<button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
+      			<button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
+    	</div>
     </div>
   </header>
   
+<!-- Content for center of page -->
+<!-- This block is filled in by the .html file that is extending base -->
+{% block content %}{% endblock %}
+
   <!-- First Photo Grid-->
   <div class="w3-row-padding">
     <div class="w3-third w3-container w3-margin-bottom">
@@ -82,7 +87,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       </div>
     </div>
   </div>
-  
+ 
   <!-- Second Photo Grid-->
   <div class="w3-row-padding">
     <div class="w3-third w3-container w3-margin-bottom">
