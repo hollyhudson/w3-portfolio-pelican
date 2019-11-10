@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if articles %}
+        {% for article in (articles_page.object_list if articles_page else articles) %}
+            <article>
+                {% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
+					<!-- the well class adds rounded corners & grey border -->
+                    <div class="well well-sm">
+                        {% include "includes/article_info.html" %}
+                    </div>
+                {% endif %}
+				<!-- Add thumbnail here -->
+				<!-- inside if/endif block for if thumbnail exists -->
+				{% if article.splash %}
+				<div class="w3-card">
+					<img class="splash" src="{{ article.splash }}" alt="test"/>
+                	<h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+               		<p>{{ article.summary }}</p>
+                   	<a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">{{ _('more') }} ...</a>
+				{% else %}
+                <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+               	<div class="summary">{{ article.summary }}
+                    <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">{{ _('more') }} ...</a>
+                {% endif %}
+               	</div>
+            </article>
+            <hr/>
+        {% endfor %}
+    {% endif %}
+
+    {% include 'includes/pagination.html' %}
+{% endblock content %}
+

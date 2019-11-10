@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- W3 mobile-first simple reactive bootstrap replacement -->
+<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/w3.css" rel="stylesheet">
+
+<!-- fonts and icons -->
+<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/font-awesome.min.css" rel="stylesheet">
+<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/fork-awesome.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" type="text/css"/>
+
+{% if FEED_ALL_ATOM %}
+	<link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}"
+		type="application/atom+xml"
+		rel="alternate"
+		title="{{ SITENAME }} ATOM Feed"/>
+{% endif %}
+
+{% if FEED_ALL_RSS %}
+	<link href="{{ SITEURL }}/{{ FEED_ALL_RSS }}"
+		type="application/rss+xml"
+		rel="alternate"
+		title="{{ SITENAME }} RSS Feed"/>
+{% endif %}
+
+    {%- if tag and TAG_FEED_ATOM %}
+        {%- if '%s' not in TAG_FEED_ATOM %}
+            {%- set tag_feed_atom = TAG_FEED_ATOM.format(slug=tag.slug) %}
+        {%- else %}
+            {%- set tag_feed_atom = TAG_FEED_ATOM.format(tag.slug) %}
+        {%- endif %}
+        <link href="{{ SITEURL }}/{{ tag_feed_atom }}" type="application/atom+xml" rel="alternate"
+              title="{{ SITENAME }} {{ tag }} ATOM Feed"/>
+    {%- endif %}
+    {%- if category and CATEGORY_FEED_ATOM %}
+        {%- if '%s' not in CATEGORY_FEED_ATOM %}
+            {%- set category_feed_atom = CATEGORY_FEED_ATOM.format(slug=category.slug) %}
+        {%- else %}
+            {%- set category_feed_atom = CATEGORY_FEED_ATOM.format(category.slug) %}
+        {%- endif %}
+        <link href="{{ SITEURL }}/{{ category_feed_atom }}" type="application/atom+xml" rel="alternate"
+              title="{{ SITENAME }} {{ category }} ATOM Feed"/>
+    {%- endif %}
+
+<body class="w3-theme-dark w3-content" style="max-width:1600px">
+
+<!-- Sidebar -->
+
+<nav class="w3-sidebar w3-collapse w3-theme-d1 w3-animate-right"
+	style="z-index:3;width:300px;"
+	id="sidebar">
+	<br>
+	<div class="w3-container">
+		<a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+			<i class="fa fa-remove"></i>
+		</a>
+		{% include 'includes/sidebar.html' %}
+	</div>
+</nav>
+
+<!-- LEFT OFF HERE -->
+
+<!-- End Content Container -->
+
+{% include 'includes/footer.html' %}
+
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.min.js"></script>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>
