@@ -12,6 +12,11 @@ ul {
 	border-bottom: none;
 }
 
+.splash {
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
 .w3-ul li {
 	border: none;
 	border-bottom: none;

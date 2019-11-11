@@ -10,27 +10,31 @@
 			<div class="w3-row-padding">
 		{% endif %}
 		
-			<!-- article content -->
+			<!-- article card content -->
 			<div class="w3-third w3-container w3-margin-bottom">
-			<article>
-			{% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
-				<div>
-					{% include "includes/article_info.html" %}
-				</div>
-			{% endif %}
+				<!-- The card div must be inside a container div -->
+				<!-- or there will be no margin around each card -->
+				<div class="theme-card w3-card">
+					<article>
+						{% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
+						<div>
+							{% include "includes/article_info.html" %}
+						</div>
+						{% endif %}
 
-				<div class="w3-card">
-					<!-- include thumbnail photo if available -->
-					{% if article.splash %}
+						<!-- include thumbnail photo if available -->
+						{% if article.splash %}
 						<img class="splash w3-hover-opacity" src="{{ article.splash }}" alt="test" style="width:100%"/>
-					{% endif %}
-					
-					<!-- include article title, summary, and more button -->
-						<p><b><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></b></p>
-						<p>{{ article.summary }}</p>
-						<a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">{{ _('more') }} ...</a>
-				</div> <!-- close w3-card div -->
-			</article>
+						{% endif %}
+				
+						<!-- include article title, summary, and more button -->
+						<div class="w3-container w3-margin-bottom">
+							<p><b><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></b></p>
+							<p>{{ article.summary }}</p>
+							<a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">{{ _('more') }} ...</a>
+						</div>
+					</article>
+				</div>
 			</div>
 
 		<!-- if we're on the last article in a row, close the row div -->

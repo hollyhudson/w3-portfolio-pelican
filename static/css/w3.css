@@ -363,7 +363,7 @@ a {
     background-color: inherit;
     text-align: center;
     cursor: pointer;
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 .w3-btn:hover {
@@ -511,7 +511,10 @@ a {
     background-color: #fff;
     position: fixed!important;
     z-index: 1;
-    overflow: auto
+    overflow: auto;
+	margin-right: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 4px 15px 0 rgba(0, 0, 0, 0.12);
+	border-radius: 18px;
 }
 
 .w3-bar-block .w3-dropdown-hover,
@@ -1087,7 +1090,8 @@ a {
 
 .w3-card,
 .w3-card-2 {
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	border: 5px;
 }
 
 .w3-card-4,
@@ -1347,7 +1351,7 @@ a {
 }
 
 .w3-bottombar {
-    border-bottom: 6px solid #ccc!important
+    border-bottom: 6px solid; #ccc!important
 }
 
 .w3-leftbar {

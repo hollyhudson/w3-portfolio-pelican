@@ -6,23 +6,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/w3.css" rel="stylesheet">
-
 <!-- fonts and icons -->
 <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/font-awesome.min.css" rel="stylesheet">
 <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/fork-awesome.min.css" rel="stylesheet">
 
-<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" type="text/css"/>
+<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/w3.css" rel="stylesheet">
+<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/theme_colors.css" rel="stylesheet">
+<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" rel="stylesheet" type="text/css"/>
 
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
 </head>
 
-<body class="w3-light-grey w3-content" style="max-width:1600px">
+<body class="theme-background w3-content" style="max-width:1600px">
 
 <!-- Sidebar -->
-<nav class="w3-sidebar w3-collapse w3-white" style="z-index:3;width:200px;right:0" id="sidebar"><br>
+<nav class="theme-sidebar w3-sidebar w3-collapse w3-theme-d1" style="z-index:3;width:200px;right:0" id="sidebar"><br>
   <div class="w3-container">
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
       <i class="fa fa-remove"></i>
@@ -41,20 +41,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   <header id="portfolio">
 
 	<!-- hamburger icon that opens and collapses the sidebar -->
-    <span class="w3-button w3-hide-large w3-xxlarge w3-right w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-right theme-background w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
 
 	<!-- main title area -->
     <div class="w3-container">
     	<h1><b>Holly Hudson</b></h1>
 
 		<!-- top nav bar area -->
-		<div class="w3-section w3-bottombar w3-padding-16">
+		<div class="w3-section w3-padding-16">
 			<span class="w3-margin-right">Filter:</span> 
 			<!-- replace with category or tag jinja code -->
-      			<button class="w3-button w3-black">ALL</button>
-      			<button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
-      			<button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
-      			<button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
+      			<button class="w3-button theme-button">ALL</button>
+      			<button class="w3-button theme-button"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
+      			<button class="w3-button theme-button w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
+      			<button class="w3-button theme-button w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
     	</div>
     </div>
   </header>

@@ -1,0 +1,37 @@
+.theme-background {
+	background-color: #292c36;
+	color: #eeeeee;	
+}
+
+.theme-sidebar {
+	background-color: #515d6b;
+	color: #ebebeb;	
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 4px 15px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 18px;
+}
+
+.theme-card {
+	background-color: #515d6b;
+	color: #ebebeb;	
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 4px 15px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 18px;
+}
+
+.theme-article {
+	background-color: #515d6b;
+	color: #ebebeb;	
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 4px 15px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 18px;
+	margin: 10px;
+}
+
+.theme-button {
+	background-color: #515d6b;
+	color: #ebebeb;	
+	border-radius: 8px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 4px 15px 0 rgba(0, 0, 0, 0.12);
+}
+
+a {
+	color: #f09042;
+}
