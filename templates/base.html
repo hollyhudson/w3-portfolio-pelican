@@ -21,8 +21,30 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 <body class="theme-background w3-content" style="max-width:1600px">
 
+<!-- Header -->
+<header id="portfolio" class="hero">
+
+	<!-- hamburger icon that opens and collapses the sidebar -->
+    <span class="w3-button w3-hide-large w3-xxlarge w3-right w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+
+	<!-- main title area -->
+    <div class="w3-container site-title">
+    	<h1><b>Holly Hudson</b></h1>
+
+		<!-- top nav bar area -->
+		<div class="w3-section w3-padding-16">
+			<span class="w3-margin-right">Filter:</span> 
+			<!-- replace with category or tag jinja code -->
+  			<button class="w3-button theme-button">ALL</button>
+   			<button class="w3-button theme-button"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
+   			<button class="w3-button theme-button w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
+   			<button class="w3-button theme-button w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
+    	</div>
+    </div>
+</header>
+  
 <!-- Sidebar -->
-<nav class="theme-sidebar w3-sidebar w3-collapse w3-theme-d1" style="z-index:3;width:200px;right:0;margin-top:100px" id="sidebar"><br>
+<nav class="theme-sidebar w3-sidebar w3-collapse w3-theme-d1" style="z-index:3;width:200px;right:0;margin-top:10px" id="sidebar"><br>
   <div class="w3-container">
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
       <i class="fa fa-remove"></i>
@@ -35,30 +57,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Non-sidebar page stuff -->
-<div class="w3-main" style="margin-right:210px">
+<div class="w3-main" style="margin-right:210px;margin-top:10px">
 
-  <!-- Header -->
-  <header id="portfolio" class="hero">
-
-	<!-- hamburger icon that opens and collapses the sidebar -->
-    <span class="w3-button w3-hide-large w3-xxlarge w3-right theme-background w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-
-	<!-- main title area -->
-    <div class="w3-container site-title">
-    	<h1><b>Holly Hudson</b></h1>
-
-		<!-- top nav bar area -->
-		<div class="w3-section w3-padding-16">
-			<span class="w3-margin-right">Filter:</span> 
-			<!-- replace with category or tag jinja code -->
-      			<button class="w3-button theme-button">ALL</button>
-      			<button class="w3-button theme-button"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
-      			<button class="w3-button theme-button w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
-      			<button class="w3-button theme-button w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
-    	</div>
-    </div>
-  </header>
-  
 <!-- Project and Post Grid -->
 <!-- This block is filled in by the .html file that is extending base -->
 {% block content %}{% endblock %}

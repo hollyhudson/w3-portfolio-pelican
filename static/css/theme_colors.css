@@ -4,16 +4,15 @@
 }
 
 .hero {
-	background-image: url("../images/hero.jpg");	
-	background-position: center top;
+	background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../images/hero.jpg");	
+	background-position: center;
 	background-size: cover;
 	max-height: 0.5%;
 	background-repeat: no-repeat;
-	
 }
 
 .site-title {
-	padding-top: 75px;
+	padding-top: 200px;
 }
 
 .theme-sidebar {
