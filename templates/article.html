@@ -2,7 +2,7 @@
 {% block title %}{{ article.title|striptags }} - {{ SITENAME }}{% endblock %}
 {% block html_lang %}{{ article.lang }}{% endblock %}
 {% block meta %}
-	<div class="theme-card">
+	<div class="theme-article">
 		{% if article.author %}
 			<meta name="author" content="{{ article.author }}" />
 		{% else %}

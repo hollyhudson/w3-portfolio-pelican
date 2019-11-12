@@ -1,4 +1,7 @@
 body {
+}
+
+.hero-space {
     padding-top: 70px;
 }
 
@@ -97,7 +100,7 @@ a:active {
 }
 
 #sidebar a {
-    color: inherit;
+    /*color: inherit;*/
 }
 
 .icon-label {
