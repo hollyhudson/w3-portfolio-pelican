@@ -42,27 +42,30 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     	</div>
     </div>
 </header>
+
+<div class="w3-main" style="margin-top:10px">
+
+	<!-- Sidebar -->
+	<nav class="theme-sidebar w3-sidebar w3-collapse w3-theme-d1" style="z-index:3;width:200px;right:0" id="sidebar"><br>
+  	<div class="w3-container">
+    	<a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      	<i class="fa fa-remove"></i>
+    	</a>
+		{% include 'includes/sidebar.html' %}
+  	</div>
+	</nav>
+	
+	<!-- Overlay effect when opening sidebar on small screens -->
+	<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+	
+	<!-- Non-sidebar page stuff -->
+	<div class="w3-container" style="margin-right:210px;margin-top:10px">
   
-<!-- Sidebar -->
-<nav class="theme-sidebar w3-sidebar w3-collapse w3-theme-d1" style="z-index:3;width:200px;right:0;margin-top:10px" id="sidebar"><br>
-  <div class="w3-container">
-    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-      <i class="fa fa-remove"></i>
-    </a>
-	{% include 'includes/sidebar.html' %}
-  </div>
-</nav>
+	<!-- Project and Post Grid -->
+	<!-- This block is filled in by the .html file that is extending base -->
+	{% block content %}{% endblock %}
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- Non-sidebar page stuff -->
-<div class="w3-main" style="margin-right:210px;margin-top:10px">
-
-<!-- Project and Post Grid -->
-<!-- This block is filled in by the .html file that is extending base -->
-{% block content %}{% endblock %}
-
+</div> <!-- end of "main" center section of page -->
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-32 w3-dark-grey">
