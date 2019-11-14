@@ -24,9 +24,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <!-- Header -->
 <header id="portfolio" class="hero">
 
-	<!-- hamburger icon that opens and collapses the sidebar -->
-    <span class="w3-button w3-hide-large w3-xxlarge w3-right w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-
 	<!-- title area -->
     <div class="w3-container site-title">
     	<h1><b>Holly Hudson</b></h1>
@@ -35,30 +32,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 		<div class="w3-section w3-padding-16">
 			<span class="w3-margin-right">Filter:</span> 
 			<!-- replace with category or tag jinja code -->
-  			<button class="w3-button theme-button">ALL</button>
-   			<button class="w3-button theme-button"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
-   			<button class="w3-button theme-button w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Photos</button>
-   			<button class="w3-button theme-button w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Art</button>
+			<a href="{{ SITEURL }}/article_list.html" class="w3-button theme-button">All</a>
+			<a href="{{ SITEURL }}/automation.html" class="w3-button theme-button">Automation</a>
+			<a href="{{ SITEURL }}/hardware.html" class="w3-button theme-button">Hardware</a>
+			<a href="{{ SITEURL }}/gardening.html" class="w3-button theme-button">Gardening</a>
     	</div>
     </div>
 </header>
 
-<!-- Article and Sidebar area-->
-	<!-- Sidebar -->
-	<nav class="theme-sidebar w3-sidebar w3-collapse" style="z-index:3;width:200px;right:0" id="sidebar"><br>
-	  	<div class="w3-container">
-    		<a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-      		<i class="fa fa-remove"></i>
-    		</a>
-			{% include 'includes/sidebar.html' %}
-  		</div>
-	</nav>
-	
-	<!-- Overlay effect when opening sidebar on small screens -->
-	<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-	
-	<!-- Non-sidebar page stuff -->
-	<div class="w3-container article-area" style="margin-right:210px;margin-top:10px">
+<!-- article area-->
+
+	<div class="w3-container article-area" style="margin-top:10px">
   
 		<!-- Project and Post Grid -->
 		<!-- This block is filled in by the .html file that is extending base -->
@@ -66,8 +50,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	</div>
 
 
-  <!-- Footer -->
-<footer class="w3-main w3-container theme-card w3-padding-32 w3-dark-grey">
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-dark-grey">
 	<div class="w3-row-padding">
 		<div class="w3-third">
 			<h3>FOOTER</h3>
