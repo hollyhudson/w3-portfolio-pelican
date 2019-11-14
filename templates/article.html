@@ -2,7 +2,7 @@
 {% block title %}{{ article.title|striptags }} - {{ SITENAME }}{% endblock %}
 {% block html_lang %}{{ article.lang }}{% endblock %}
 {% block meta %}
-	<div class="theme-article">
+	<div class="theme-article w3-main">
 		{% if article.author %}
 			<meta name="author" content="{{ article.author }}" />
 		{% else %}
@@ -21,7 +21,7 @@
 	<section id="content">
 	<article>
 
-	<div  class="w3-container theme-article">
+	<div  class="w3-container theme-article w3-main">
 		<header class="page-header">
 		<h1>
 			<a href="{{ SITEURL }}/{{ article.url }}"

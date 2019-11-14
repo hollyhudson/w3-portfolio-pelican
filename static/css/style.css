@@ -15,9 +15,25 @@ ul {
 	border-bottom: none;
 }
 
-.splash {
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
+.splash-container {
+	border-radius: 15px 15px 0px 0px;
+	height: 200px;
+}
+
+.w3-card {
+	/*border: 5px;	*/
+}
+
+.theme-card {
+	margin-bottom: 10px;
+}
+
+.theme-article {
+	margin-bottom: 10px;
+}
+
+#sidebar .list-group, #sidebar .list-group-item {
+    background-color: transparent;
 }
 
 .w3-ul li {
@@ -39,10 +55,6 @@ a:hover {
 
 a:active {
 	text-decoration: none;
-}
-
-#sidebar .list-group, #sidebar .list-group-item {
-    background-color: transparent;
 }
 
 /* for list-groups nested within a list-group-item, reset the bottom margin */
@@ -97,6 +109,10 @@ a:active {
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
+	position: relative; /* fixed means it stays there if page is scrolled */
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 4px 15px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 18px;
+	margin-right: 10px;
 }
 
 #sidebar a {
@@ -273,3 +289,9 @@ figure.floatcenter, .align-center {
 .gap-left {
   margin-left: 10px;
 }
+
+footer {
+	clear: both;
+	display: block;
+}
+

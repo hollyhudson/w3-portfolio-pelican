@@ -7,11 +7,11 @@
 		<!-- start a new row every 3rd article -->
 		{% if loop.index0 % 3 == 0 %}
 			<!-- open a new row div -->
-			<div class="w3-row-padding">
+			<div class="w3-row-padding w3-main">
 		{% endif %}
 		
 			<!-- article card content -->
-			<div class="w3-third w3-container w3-margin-bottom">
+			<div class="w3-third w3-container">
 				<!-- The card div must be inside a container div -->
 				<!-- or there will be no margin around each card -->
 				<div class="theme-card w3-card">
@@ -24,7 +24,8 @@
 
 						<!-- include thumbnail photo if available -->
 						{% if article.splash %}
-						<img class="splash w3-hover-opacity" src="{{ article.splash }}" alt="test" style="width:100%"/>
+						<div class="splash-container w3-hover-opacity" style="background-image:url({{ article.splash }});background-position:center;background-size:cover;background-repeat:no-repeat;width:100%" alt="test">
+						</div>
 						{% endif %}
 				
 						<!-- include article title, summary, and more button -->
