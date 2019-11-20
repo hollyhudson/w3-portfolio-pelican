@@ -1,8 +1,30 @@
-body {
+
+.theme-background {
+	background-color: #383d49;
+	color: #eeeeee;
 }
 
-.hero-space {
-    padding-top: 70px;
+.emph-color {
+	color: #f8a85b;
+}
+
+.hero {
+	background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../images/hero.jpg");
+	background-position: center;
+	background-size: cover;
+	max-height: 0.5%;
+	background-repeat: no-repeat;
+}
+
+.site-title {
+	padding-top: 200px;
+}
+
+.theme-sidebar {
+	background-color: #515d6b;
+	color: #ebebeb;
+ 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 4px 15px 0 rgba(0, 0, 0, 0.12);
+	border-radius: 18px;
 }
 
 /* ravelry icon is too big, needs to be 17.16 x 20 like the rest */
@@ -15,21 +37,40 @@ ul {
 	border-bottom: none;
 }
 
+.link-card {
+	display: block;
+	background-color: #515d6b;
+	color: #ebebeb;
+	margin-bottom: 10px;
+    border-radius: 18px;	
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.8), 0 4px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.link-card:hover {
+	color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(238, 135, 51, 0.8), 0 4px 20px 0 rgba(56, 61, 73, 0.3);
+}
+
 .splash-container {
-	border-radius: 15px 15px 0px 0px;
+	border-radius: 18px 18px 0 0;
 	height: 200px;
 }
 
-.w3-card {
-	/*border: 5px;	*/
-}
-
-.theme-card {
-	margin-bottom: 10px;
-}
-
 .theme-article {
+	background-color: #515d6b;
+	color: #ebebeb;
 	margin-bottom: 10px;
+	border-radius: 18px;
+}
+
+.theme-button {
+	background-color: #515d6b;
+	color: #ebebeb;
+	border-radius: 8px;
+}
+
+.theme-button:hover {
+    box-shadow: 0 2px 5px 0 rgba(238, 135, 51, 0.8), 0 4px 15px 0 rgba(56, 61, 73, 0.3);
 }
 
 #sidebar .list-group, #sidebar .list-group-item {
@@ -115,10 +156,6 @@ a:active {
 	margin-right: 10px;
 }
 
-#sidebar a {
-    /*color: inherit;*/
-}
-
 .icon-label {
     margin-left: 10px;
 }
@@ -130,7 +167,11 @@ a:active {
 }
 
 a, a:hover {
-    color: inherit;
+	color: #ffa64d;
+}
+
+a i {
+	color: #ffa64d;
 }
 
 .entry-content a {

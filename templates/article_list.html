@@ -14,7 +14,7 @@
 			<div class="w3-third w3-container">
 				<!-- The card div must be inside a container div -->
 				<!-- or there will be no margin around each card -->
-				<div class="theme-card w3-card" style="min-height:400px">
+				<a class="link-card" style="min-height:400px" href="{{ SITEURL }}/{{ article.url }}">
 					<article>
 						{% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
 						<div>
@@ -24,18 +24,18 @@
 
 						<!-- include thumbnail photo if available -->
 						{% if article.splash %}
-						<div class="splash-container w3-hover-opacity" style="background-image:url({{ article.splash }});background-position:center;background-size:cover;background-repeat:no-repeat;width:100%" alt="test">
+						<div class="splash-container" style="background-image:url({{ article.splash }});background-position:center;background-size:cover;background-repeat:no-repeat;width:100%" alt="test">
 						</div>
 						{% endif %}
 				
 						<!-- include article title, summary, and more button -->
 						<div class="w3-container w3-margin-bottom">
-							<p><b><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></b></p>
+							<p class="emph-color"><b>{{ article.title }}</b></p>
 							<p>{{ article.summary }}</p>
-							<a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">{{ _('more') }} ...</a>
+							<div class="emph-color">more ...</div>
 						</div>
 					</article>
-				</div>
+				</a>
 			</div>
 
 		<!-- if we're on the last article in a row, close the row div -->
