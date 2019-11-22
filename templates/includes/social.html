@@ -1,10 +1,6 @@
 {% if SOCIAL %}
-	{% from 'includes/sidebar/macros.jinja' import title %}
 
-<!-- Sidebar/Social-->
-<li> 
-	<h4>{{ title('Find me on:', 1) }}</h4>
-	<ul class="w3-ul" id="social">
+<!-- Social icons bar -->
 		{% for s in SOCIAL %}
 			{% if s[2] %}
 				{% set name_sanitized = s[2]|lower|replace('+','-plus')|replace(' ','-') %}
@@ -12,13 +8,11 @@
 				{% set name_sanitized = s[0]|lower|replace('+','-plus')|replace(' ','-') %}
 			{% endif %}
 			{% if name_sanitized in ['flickr', 'slideshare', 'instagram', 'spotify', 'stack-overflow', 'weibo', 'line-chart', 'home', 'user', 'users', 'envelope', 'envelope-o', 'stack-exchange', 'hacker-news', 'gitlab', 'vk'] %}
-				{% set iconattributes = '"fa fa-' ~ name_sanitized ~ ' fa-lg"' %}
+				{% set iconattributes = '"fa fa-' ~ name_sanitized ~ ' fa-lg link-icon"' %}
 			{% else %}
-				{% set iconattributes = '"fa fa-' ~ name_sanitized ~ ' fa-lg"' %}
+				{% set iconattributes = '"fa fa-' ~ name_sanitized ~ ' fa-lg link-icon"' %}
 			{% endif %}
-			<li><a href="{{ s[1] }}"><i class={{ iconattributes }}></i> {{ s[0] }}</a></li>
+			<a href="{{ s[1] }}"><i class={{ iconattributes }}></i></a>
 		{% endfor %}
-	</ul>
-</li> 
 <!-- end Sidebar/Social-->
 {% endif %}

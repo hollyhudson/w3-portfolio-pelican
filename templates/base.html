@@ -6,7 +6,7 @@
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- fonts and icons -->
-<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/font-awesome.min.css" rel="stylesheet">
+<link href="{{ SITEURL }}/THEME_STATIC_DIR }}/css/font-awesome.min.css" rel="stylesheet">
 <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/fork-awesome.min.css" rel="stylesheet">
 
 <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/w3.css" rel="stylesheet">
@@ -24,17 +24,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 	<!-- title area -->
     <div class="w3-container site-title">
-    	<h1><b>Holly Hudson</b></h1>
+    	<h1><b><a href="{{ SITEURL }}/index.html">Holly Hudson</a></b></h1>
 
-		<!-- top nav bar area -->
-		<div class="w3-section w3-padding-16">
-			<span class="w3-margin-right">Filter:</span> 
-			<!-- replace with category or tag jinja code -->
-			<a href="{{ SITEURL }}/article_list.html" class="w3-button theme-button">All</a>
-			<a href="{{ SITEURL }}/category/automation.html" class="w3-button theme-button">Automation</a>
-			<a href="{{ SITEURL }}/category/hardware.html" class="w3-button theme-button">Hardware</a>
-			<a href="{{ SITEURL }}/category/gardening.html" class="w3-button theme-button">Gardening</a>
+		<!-- top nav bar area for social -->
+		<div class="w3-section nav-padding">
+			{% include 'includes/social.html' %}
     	</div>
+
     </div>
 </header>
 
@@ -42,6 +38,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 	<div class="w3-container article-area" style="margin-top:10px">
   
+		<!-- top nav bar area for categories -->
+		<div class="w3-section nav-padding">
+			<a href="{{ SITEURL }}/pages/talks.html" class="w3-button theme-button">Talks & Workshops</a>
+			<!-- replace with category or tag jinja code -->
+			<a href="{{ SITEURL }}/category/automation.html" class="w3-button theme-button">Automation</a>
+			<a href="{{ SITEURL }}/category/hardware.html" class="w3-button theme-button">Hardware</a>
+			<a href="{{ SITEURL }}/category/gardening.html" class="w3-button theme-button">Gardening</a>
+			<a href="{{ SITEURL }}/category/VR.html" class="w3-button theme-button">VR</a>
+    	</div>
+
 		<!-- Project and Post Grid -->
 		<!-- This block is filled in by the .html file that is extending base -->
 		{% block content %}{% endblock %}
